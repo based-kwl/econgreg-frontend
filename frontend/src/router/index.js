@@ -3,6 +3,7 @@ import Home from '../views/Home.vue'
 import User from '../views/User.vue'
 import NotFound from '../views/404.vue'
 import Setup from '../views/Setup.vue'
+import Planatas from '../views/Planatas.vue'
 
 const routes = [
   {
@@ -32,6 +33,11 @@ const routes = [
     path: '/404',
     name: '404',
     component: NotFound
+  },
+  {
+    path: '/planatas',
+    name: 'planatas',
+    component: Planatas
   }
 
 ]
