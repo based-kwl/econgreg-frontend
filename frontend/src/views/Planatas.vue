@@ -1,5 +1,26 @@
 <template>
   <div class="planatas">
-    <iframe src= "http://localhost:8080/" class= "h-screen w-4/5"></iframe>
+    <iframe id="stel" ref="stel" src= "http://localhost:8080/" class= "h-screen w-4/5"></iframe>
+    <button class="btn btn-blue" v-on:click="setLoc()">Button</button>
+    
   </div>
 </template>
+
+<script>
+export default {
+  name: 'Planatas',
+  methods: {
+    receiveMsg(event) {
+      console.log('msg', event.data)
+    },
+    setLoc() {
+      const lat = -75
+      const lon = 45
+      this.$refs.stel.contentWindow.postMessage({ lat: lat, lon: lon }, '*')
+    }
+  },
+  mounted() {
+    window.addEventListener('message', this.receiveMsg, false)
+  }
+}
+</script>
