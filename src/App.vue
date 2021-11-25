@@ -1,10 +1,21 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link> | 
-    <router-link to="/u/e">User E</router-link> |
-    <router-link to="/setup">Setup</router-link> |
-    <router-link to="/planatas">Planatas</router-link>
-    <router-view></router-view>
+  <div id="app">
+    <Navbar />
+    <router-view />
   </div>
 </template>
+
+<script>
+// @ is an alias to /src
+import Navbar from "./components/Navbar.vue"
+import Home from "./views/Home.vue"
+
+
+export default {
+  name: '',
+  components: {
+    Navbar,
+    Home
+  }
+}
+</script>

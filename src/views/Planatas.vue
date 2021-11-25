@@ -1,6 +1,6 @@
 <template>
   <div class="planatas">
-    <iframe id="stel" ref="stel" src= "http://localhost:8080/" class= "h-screen w-4/5"></iframe>
+    <iframe id="stel" ref="stel" src= "http://192.168.1.28:8080/" class= "h-screen w-4/5"></iframe>
     <button class="btn btn-blue" v-on:click="setLoc()">Button</button>
     
   </div>
