@@ -20,7 +20,7 @@ module.exports = {
                 largeText: ['Bebas Neue']
             },
             backgroundImage: {
-                'greg-andromeda1': "url(http://assets.greg.192.168.1.28.nip.io:8086/images/greg-andromeda1.png)"
+                'greg-andromeda1': "url(http://assets.greg.localhost:8086/images/greg-andromeda1.png)"
             }
         }
     },

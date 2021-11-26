@@ -1,16 +1,22 @@
 <template>
-    <nav class="flex items-center justify-between flex-wrap p-3 bg-gdark">
-        <div class="flex items-center flex-no-shrink text-white mr-6">
-            <span class="font-semibold text-xl tracking-tight">Econgreg</span>
-        </div>
-        <div>
-            <a href="#" class="no-underline inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal hover:bg-gray-400 mt-4 sm:mt-0">Login</a>
-        </div>
-    </nav>
+  <header class="text-gray-400 bg-gdark body-font">
+    <div class="container mx-auto flex flex-wrap p-2 flex-col md:flex-row items-center">
+      <a class="flex title-font font-medium items-center text-white mb-4 md:mb-0">
+        <span class="ml-3 text-xl">Econgreg</span>
+      </a>
+      <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
+        <a class="mr-5 hover:text-white">Sharted Link</a>
+      </nav>
+      <button class="inline-flex items-center bg-gray-800 border-0 py-1 px-3 focus:outline-none hover:bg-gray-700 rounded text-base mt-4 md:mt-0">Login
+        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
+          <path d="M5 12h14M12 5l7 7-7 7"></path>
+        </svg>
+      </button>
+    </div>
+  </header>
 </template>
 
 <script>
-
 export default {
   data() {
     return {
