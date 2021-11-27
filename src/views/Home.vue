@@ -3,7 +3,7 @@
     <section class="text-gray-400 body-font" ref="vantaRef">
       <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
         <div class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
-          <h1 class="title-font sm:text-4xl text-3xl mb-4 font-bold text-transparent bg-clip-text bg-gradient-to-br from-yellow-400 to-gray-200">SOME CATCHY HERO TITLE HERE IDK</h1>
+          <h1 class="title-font sm:text-4xl text-3xl mb-4 font-bold text-transparent bg-clip-text bg-gradient-to-br from-yellow-500 to-gray-200">SOME CATCHY HERO TITLE HERE IDK</h1>
           <p class="mb-8 leading-relaxed text-gmilk">Something to explain the purpose of the site</p>
           <div class="flex w-full md:justify-start justify-center items-end">
             <div class="relative mr-4 md:w-full lg:w-full xl:w-1/2 w-2/4">
@@ -20,6 +20,14 @@
         </div>
       </div>
     </section>
+    <div class="w-full h-4/5 bg-gdark flex justify-center items-center">
+      <div class="bg-gdark w-4/5">
+        <vue-carousel class="h-full" :data="data" indicators="hover"></vue-carousel>
+      </div>
+    </div>
+    
+    
+    
   </body>
 </template>
 
@@ -27,9 +35,23 @@
 
 import * as p5 from 'p5'
 import TOPOLOGY from 'vanta/src/vanta.topology'
+import VueCarousel from '@chenfengyuan/vue-carousel';
 // Make sure window.THREE is defined, e.g. by including three.min.js in the document head using a <script> tag
  
 export default {
+  name:"Home",
+  components: {
+    VueCarousel
+  },
+  data() {
+    return {
+      data: [
+        '<div class="" style="height: 40rem;"> <img src="http://assets.greg.192.168.1.126.nip.io:8086/images/greg-andromeda1.png" class="h-full object-cover w-full"/> </div>',
+        '<div class="" style="height: 40rem;"> <img src="http://assets.greg.192.168.1.126.nip.io:8086/images/greg-orion1.png" alt="..." class="h-full object-cover w-full"/> </div>',
+        '<div class="" style="height: 40rem;"> <img src="http://assets.greg.192.168.1.126.nip.io:8086/images/greg-veil1.png" alt="..." class="h-full object-cover w-full"/> </div>',
+      ],
+    };
+  },
   mounted() {
     this.vantaEffect = TOPOLOGY({
       el: this.$refs.vantaRef,
