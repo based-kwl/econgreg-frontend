@@ -7,7 +7,7 @@
           <p class="mb-8 leading-relaxed">Something to explain the purpose of the site</p>
           <div class="flex w-full md:justify-start justify-center items-end">
             <div class="relative mr-4 md:w-full lg:w-full xl:w-1/2 w-2/4">
-              <label for="hero-field" class="leading-7 text-sm text-gray-400">Ready to explore the skies?</label>
+              <label for="hero-field" class="leading-7 text-sm text-gmilk">Ready to explore the skies?</label>
               <input type="text" id="hero-field" placeholder="Twitch name" name="hero-field" class="w-full bg-gray-800 rounded bg-opacity-40 border border-gray-700 focus:ring-2 focus:ring-green-900 focus:bg-transparent focus:border-green-500 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
             </div>
             <button class="inline-flex text-white bg-blue-500 border-0 py-2 px-6 focus:outline-none hover:bg-blue-600 rounded text-lg">Explore</button>
@@ -29,7 +29,7 @@ export default {
     this.vantaEffect = TOPOLOGY({
       el: this.$refs.vantaRef,
       p5: p5,
-      color: 0x666650,
+      color: 0x374d61,
       backgroundColor: 0x0     
     })
     window.addEventListener('resize', () => {this.vantaEffect.resize()});
