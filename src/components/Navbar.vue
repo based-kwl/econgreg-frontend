@@ -2,6 +2,7 @@
   <header class="text-gray-400 bg-gdark body-font">
     <div class="container mx-auto flex flex-wrap p-2 flex-col md:flex-row items-center">
       <a class="flex title-font font-medium items-center text-white mb-4 md:mb-0">
+        <img src="http://assets.greg.192.168.1.126.nip.io:8086/images/bw-helix.png" class="object-contain h-10 w-10">
         <router-link to="/" class="ml-3 text-xl">Econgreg</router-link>
       </a>
       <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
