@@ -46,12 +46,17 @@ export default {
   components: {
     VueCarousel
   },
+  methods: {
+    test() {
+      console.log("e");
+    }
+  },
   data() {
     return {
       data: [
         '<div class="" style="height: 40rem;"> <img src="http://assets.greg.192.168.1.126.nip.io:8086/images/greg-andromeda1.png" class="h-full object-cover w-full"/> </div>',
-        '<div class="" style="height: 40rem;"> <img src="http://assets.greg.192.168.1.126.nip.io:8086/images/greg-orion1.png" alt="..." class="h-full object-cover w-full"/> </div>',
-        '<div class="" style="height: 40rem;"> <img src="http://assets.greg.192.168.1.126.nip.io:8086/images/greg-veil1.png" alt="..." class="h-full object-cover w-full"/> </div>',
+        '<div class="" style="height: 40rem;"> <img src="http://assets.greg.192.168.1.126.nip.io:8086/images/greg-orion1.png" class="h-full object-cover w-full"/> </div>',
+        '<div class="" style="height: 40rem;"> <img src="http://assets.greg.192.168.1.126.nip.io:8086/images/greg-veil1.png" class="h-full object-cover w-full"/> </div>',
       ],
     };
   },
