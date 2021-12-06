@@ -1,8 +1,10 @@
 <template>
   <div class="planatas">
-    <iframe id="stel" ref="stel" src= "http://192.168.1.126:8080/" class= "h-screen w-4/5"></iframe>
-    <button class="btn btn-blue" v-on:click="setLoc()">Button</button>
-    
+    <div ref="twitchPlayer" class="m-10"></div>
+    <div class="grid place-items-center h-full">
+      <iframe id="stel" ref="stel" src= "http://192.168.1.126:8080/" class= "w-4/5" style="height: 60vh;"></iframe>
+      <button class="btn bg-blue-500" v-on:click="setLoc()">Spaghet Set Loc</button>
+    </div>
   </div>
 </template>
 
@@ -20,7 +22,22 @@ export default {
     }
   },
   mounted() {
-    window.addEventListener('message', this.receiveMsg, false)
+    window.addEventListener('message', this.receiveMsg, false);
+    const twitchRef = this.$refs.twitchPlayer;
+    let twitchEmbed = document.createElement('script');
+    const url = window.location.href;
+    const user = url.split("/").pop();
+    twitchEmbed.setAttribute('src', 'https://embed.twitch.tv/embed/v1.js');
+    twitchEmbed.addEventListener('load', () => {
+	    const options = {
+	      width: "100%",
+	      height: "100%",
+	      channel: user,
+	      layout: "video"
+	    };
+	    new window.Twitch.Embed(twitchRef, options);
+	  }, {once: true});
+	  document.body.appendChild(twitchEmbed);
   }
 }
 </script>
