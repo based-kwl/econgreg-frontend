@@ -14,6 +14,9 @@ export default {
   methods: {
     receiveMsg(event) {
       console.log('msg', event.data)
+      if (event.data.status) {
+        this.setLoc() //set location when ready
+      }
     },
     setLoc() {
       const lat = -75
