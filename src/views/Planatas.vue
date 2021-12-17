@@ -2,7 +2,8 @@
   <div class="planatas">
     <div ref="twitchPlayer" class="m-10"></div>
     <div class="grid place-items-center h-full">
-      <iframe id="stel" ref="stel" src= "http://192.168.1.126:8080/" class= "w-4/5" style="height: 60vh;"></iframe>
+      <p> Select </p>
+      <iframe id="stel" ref="stel" src= "http://192.168.1.126:8080/" class= "w-11/12" style="height: 90vh;"></iframe>
       <button class="btn bg-blue-500" v-on:click="setLoc()">Spaghet Set Loc</button>
     </div>
   </div>
@@ -25,6 +26,21 @@ export default {
     }
   },
   mounted() {
+    
+    console.log("mounted")
+    const socket = new WebSocket('ws://api.greg.192.168.1.126.nip.io:8086/ws')
+
+    // Connection opened
+    socket.addEventListener('open', function (event) {
+        socket.send('s9bpdzb5ls8kw8bvhxemg2gv9v8pc0');
+    });
+
+    // Listen for messageszzz
+    socket.addEventListener('message', function (event) {
+        console.log('Message from server ', event.data);
+        socket.send('OK')
+    });
+
     window.addEventListener('message', this.receiveMsg, false);
     const twitchRef = this.$refs.twitchPlayer;
     let twitchEmbed = document.createElement('script');
@@ -41,6 +57,8 @@ export default {
 	    new window.Twitch.Embed(twitchRef, options);
 	  }, {once: true});
 	  document.body.appendChild(twitchEmbed);
+
+    
   }
 }
 </script>
